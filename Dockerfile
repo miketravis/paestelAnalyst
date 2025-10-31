@@ -16,4 +16,4 @@ COPY . .
 
 # Gunicorn is the production server
 # Cloud Run automatically sets the $PORT environment variable
-CMD ["gunicorn", "-b", "0.0.0.0:$PORT", "main:app", "-k", "uvicorn.workers.UvicornWorker"]
+CMD gunicorn -b 0.0.0.0:$PORT main:app -k uvicorn.workers.UvicornWorker
